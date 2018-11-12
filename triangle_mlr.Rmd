@@ -15,7 +15,7 @@ indent: yes
 knitr::opts_chunk$set(
   warning = FALSE,       # don't show warnings
   message = FALSE,       # don't show messages (less serious warnings)
-  cache = TRUE,         # set to TRUE to save results from last compilation
+  cache = TRUE,          # set to TRUE to save results from last compilation
   fig.align = "center"   # center figures
 )
 
@@ -23,13 +23,10 @@ library(tidyverse)       # load libraries you always use here
 library(knitr)           # require for purl function to create code appendix
 library(ggplot2)         # for plotting
 library(GGally)          # needed for scatter plot matrix
-#library(car)             # Required for levene's test
-#library(coin)            # Required for randomization test
-#library(CarletonStats)   # Required for permTestPaired
-#library(tidymodels)
-#library(mvtnorm)         #Required for bivariate normal distribution
+#library(mvtnorm)        # required for bivariate normal distribution
 
-set.seed(1104)             # make random results reproducible
+set.seed(1104)           # make random results reproducible
+this_file <- "triangle_mlr.Rmd"  # used to automatically generate code appendix
 ```
 
 # Motivation
@@ -49,4 +46,9 @@ for (i in seq(1,100)){
 
 trilm = lm(b3 ~ b1 + b2)
 summary(trilm)
+```
+
+
+```{r, , echo = T, eval = F)}
+code = readLines(purl(this_file, documentation = 0))
 ```
