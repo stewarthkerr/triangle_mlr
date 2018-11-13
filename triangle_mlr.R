@@ -18,6 +18,7 @@ knitr::include_graphics('./motivation.jpg')
 tb1 = 45
 tb2 = 45
 tb3 = 90
+stopifnot( tb1 + tb2 == tb3)
 
 b1 = c(); b1h2 = c();
 b2 = c(); b2h2 = c();
